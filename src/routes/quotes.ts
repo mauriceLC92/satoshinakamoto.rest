@@ -11,9 +11,9 @@ const quotes: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
         return randomQuote(quoteData);
     });
 
-    fastify.get('/quote/:id', async function (request, reply) {
-        return quoteData;
-    });
+    // fastify.get('/quote/:id', async function (request, reply) {
+    //     return quoteData;
+    // });
 };
 
 export default quotes;
