@@ -7,6 +7,8 @@ export interface IQuotes {
     date: string;
 }
 
+// Credit to https://satoshi.nakamotoinstitute.org/quotes/ for the quotes data
+// https://github.com/NakamotoInstitute/nakamotoinstitute.org
 export const quoteData: IQuotes[] = [
     {
         category: 'general',
