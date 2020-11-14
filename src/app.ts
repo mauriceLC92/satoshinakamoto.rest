@@ -1,6 +1,7 @@
 import path from 'path';
 import AutoLoad, { AutoloadPluginOptions } from 'fastify-autoload';
 import { FastifyPluginAsync } from 'fastify';
+import * as rateLimiter from 'fastify-rate-limit';
 
 export type AppOptions = {
     // Place your custom options for app below here.
@@ -11,6 +12,10 @@ const app: FastifyPluginAsync<AppOptions> = async (
     opts
 ): Promise<void> => {
     // Place here your custom code!
+    fastify.register(require('fastify-rate-limit'), {
+        max: 100,
+        timeWindow: '1 minute',
+    });
 
     // Do not touch the following lines
 
